@@ -29,8 +29,8 @@ class ContactsAdmin(admin.ModelAdmin):
 @admin.register(Comment)
 class CommentsAdmin(admin.ModelAdmin):
     #display the following fields
-    list_display = ['name','email','message']
+    list_display = ['name','content']
     
     #search with the defined field
-    search_fields = ['name', 'email']
+    search_fields = ['name']
     
