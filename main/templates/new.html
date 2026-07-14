@@ -1,0 +1,39 @@
+
+{% extends 'index.html' %}
+{% block tittle %}
+    New Article | MOX LABS
+    {% endblock %}
+
+{% block content %}
+<main class="pt-32 pb-xl overflow-hidden relative">
+
+<!-- Right: Contact Form -->
+<div class=" rounded-lg p-lg  overflow-hidden m-10 w-">
+<form class="space-y-md relative z-10 w-full lg:w-1/2 m-auto" method="POST">
+ {% csrf_token %}
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Blog Title</label>
+{{form.title}}
+</div>
+
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Blog Content</label>
+{{form.content}}
+</div>
+
+<button class="w-full bg-gradient-to-r from-red-500 to-violet-500 py-md rounded-full font-label-md text-label-md text-white flex items-center justify-center gap-sm" type="submit">
+    Post
+    <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+
+</form>
+<!-- Decorative Element -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+</div>
+</div>
+
+
+</div>
+</main>
+
+{% endblock %}

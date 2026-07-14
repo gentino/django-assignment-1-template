@@ -1,0 +1,125 @@
+
+<!-- message-->
+{% extends  'index.html' %}
+{% block tittle %}
+    Contact | MOX LABS
+    {% endblock %}
+{% block content %}
+<main class="pt-32 pb-xl overflow-hidden relative">
+<!-- Ambient Background Shader -->
+    {% if messages %}
+    {% for message in messages %}
+        <div class="m-10 rounded-lg p-4
+            {% if message.tags == 'success' %}
+                bg-green-100 text-green-700
+            {% elif message.tags == 'error' %}
+                bg-red-100 text-red-700
+            {% elif message.tags == 'warning' %}
+                bg-yellow-100 text-yellow-700
+            {% else %}
+                bg-blue-100 text-blue-700
+            {% endif %}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<section class="mb-24 text-center lg:text-left">
+<p class="uppercase tracking-[8px] text-violet-400 font-semibold mb-4">
+GET IN TOUCHs
+</p>
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+
+Let's
+
+<span class="gradient">
+
+Build Something Amazing
+
+</span>
+
+Together.
+
+</h1>
+
+<p class="mt-8 text-lg text-slate-400 max-w-2xl leading-9">
+
+Whether you need a modern website, a Django web application,
+UI/UX design, or a long-term development partner,
+I'd love to hear about your project.
+
+</p>
+
+</section>
+<!-- Split Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-start">
+<!-- Left: Info Cards -->
+<div class="space-y-md">
+<div class="grid grid-cols-1 md:grid-cols-1 gap-md">
+<!-- Email Card -->
+<div class="glass rounded-3xl p-8 rounded-xl p-md group transition-all duration-300 hover:bg-surface-container-high">
+<div class="flex items-center gap-sm mb-sm text-primary">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<h3 class="font-label-md text-label-md">Email</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface">miraobikz@gmail.com</p>
+</div>
+<!-- Phone Card -->
+<div class="glass rounded-3xl p-8 rounded-xl p-md group transition-all duration-300 hover:bg-surface-container-high">
+<div class="flex items-center gap-sm mb-sm text-secondary">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+<h3 class="font-label-md text-label-md">Phone</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface">+234 813 133 8819</p>
+</div>
+<!-- Location Card -->
+<div class="glass rounded-3xl p-8 rounded-xl p-md group transition-all duration-300 hover:bg-surface-container-high">
+<div class="flex items-center gap-sm mb-sm text-red-500">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<h3 class="font-label-md text-label-md">Location</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface">21B Ikonne Street, Faulks Road, Aba</p>
+</div>
+<!-- Availability Card -->
+<div class="glass rounded-3xl p-8 rounded-xl p-md group transition-all duration-300 hover:bg-surface-container-high">
+<div class="flex items-center gap-sm mb-sm text-primary">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+<h3 class="font-label-md text-label-md">Availability</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface">Currently: Available</p>
+</div>
+
+</div>
+</div>
+<!--  Contact Form -->
+<div class="glass rounded-3xl p-8 rounded-2xl p-lg relative overflow-hidden">
+<form class="space-y-md relative z-10" method="POST">
+    {% csrf_token %}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Full Name</label>
+{{form.name}}
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Email Address</label>
+{{form.email}}
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Your Message</label>
+{{form.message}}
+</div>
+<button class="w-full bg-violet-500 py-md rounded-full font-label-md text-label-md text-white flex items-center justify-center gap-sm" type="submit">
+                            Send
+                            <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</form>
+<!-- Decorative Element -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+</div>
+</div>
+
+
+</div>
+</main>
+{% endblock %}

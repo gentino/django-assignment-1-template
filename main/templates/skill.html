@@ -1,0 +1,79 @@
+{% extends 'index.html'  %}
+{% block tittle %}
+    SKills| MOX LABS
+    {% endblock %}
+
+{% block content %}
+<main class="pt-20 pb-xl px-gutter max-w-container-max mx-auto  overflow-hidden">
+<!-- Background Ambient Glows -->
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="absolute top-1/2 -right-24 w-80 h-80 bg-secondary/10 blur-[100px] rounded-full pointer-events-none"></div>
+<!-- Hero Section -->
+<section class="text-center">
+<p class="uppercase tracking-[8px] text-violet-400 font-semibold mb-4">MY EXPERTISE</p>
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">Technical<span class="gradient">Skills</span></h1>
+
+<p class="mt-8 max-w-3xl mx-auto text-lg text-slate-400 leading-9">
+Crafting modern web applications through a blend of
+creative design, clean architecture, and scalable development.
+</p>
+</section>
+
+<!-- Skills Categories Bento Grid -->
+<section class="glass rounded-[32px] p-10 items-start">
+<!-- Category: Frontend (Large Card) -->
+<div class="md:col-span-8 glass-card p-lg rounded-xl relative overflow-hidden ">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex items-center gap-sm mb-lg">
+<span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+<h2 class="text-3xl font-bold">Professional Skills</h2>
+</div>
+     {% for skill in skills %}
+        <div class="space-y-lg  mb-5">
+        <div class="space-y-xs">
+        <div class="flex justify-between items-center font-label-md text-label-md mb-xs">
+        <span class="text-on-surface">{{skill.title}} | [<small>Years of experience:{{skill.years_of_experience}}</small>]</span>
+        <span class="text-primary">{{skill.proficiency}}%</span>
+        </div>
+        <div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+        <div class="skill-progress-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full w-[{{skill.proficiency}}%]" ></div>
+        </div>
+        </div>
+        </div>
+    {% endfor %}
+
+
+</div>
+</div>
+<!-- Category: Tools (Vertical Card) -->
+<div class="md:col-span-4 glass-card p-lg rounded-xl h-full flex flex-col">
+<div class="flex items-center gap-sm mb-lg">
+<span class="material-symbols-outlined text-secondary text-3xl">construction</span>
+<h2 class="font-headline-lg text-headline-lg">Tools</h2>
+</div>
+<div class="flex flex-wrap gap-sm">
+<span class="px-md py-xs bg-secondary/10 border border-secondary/30 text-secondary rounded-full text-label-md font-semibold">Git</span>
+<span class="px-md py-xs bg-secondary/10 border border-secondary/30 text-secondary rounded-full text-label-md font-semibold">Vs Code</span>
+<span class="px-md py-xs bg-secondary/10 border border-secondary/30 text-secondary rounded-full text-label-md font-semibold">GitHub</span>
+</div>
+<div class="mt-auto pt-lg">
+<div class="p-md bg-surface-container rounded-lg border border-white/5 italic text-on-surface-variant font-body-md">"The tool is only as good as the craftsman's intention."</div>
+</div>
+</div>
+
+</section>
+<!-- Illustration / WebGL Placeholder Context -->
+<section class="mt-20 min-h-[300px] glass rounded-[32px] relative overflow-hidden flex items-center justify-center">
+<div class="relative z-10 text-center px-gutter">
+<h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+    Always
+    <span class="bg-gradient-to-r from-red-500 to-violet-500 bg-clip-text text-transparent">
+        Learning
+    </span>
+</h2>
+<p class="font-body-md text-on-surface-variant max-w-xl">Currently exploring Django RestFrame Work, and AI-integrated developer workflows.</p>
+</div>
+</section>
+</main>
+
+{% endblock %}
